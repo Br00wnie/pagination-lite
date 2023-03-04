@@ -1,0 +1,288 @@
+/* font */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+/* box-sizing */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* geometry size */
+
+:root {
+  font-size: 1.25em;
+}
+
+/* vars */
+
+:root {
+  --orange-color-1: sandybrown;
+  --orange-color-0: orangered;
+  --gray-color-1: slategray;
+  --gray-color-0: darkslategray;
+
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+
+  --gradient-angle: 135deg;
+
+  --orange-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--orange-color-1) 0%,
+    var(--orange-color-0) 100%
+  );
+
+  --alteranive-font-size: 1.5rem;
+
+  --big-gap: 2rem;
+  --small-gap: 1rem;
+
+  --border-radius: 2.5rem;
+  --border-width: 0.2rem;
+
+  --inner-shadow: inset 0 0 0.5rem 0.125rem rgb(var(--black), 0.5);
+  --glow: 0 0 0.5em rgb(var(--white), 0.75);
+
+  --button-width: 6rem;
+  --item-width: 2.75rem;
+}
+
+/* body */
+
+body {
+  font-size: 0.75rem;
+  font-family: "Raleway", "Arial", sans-serif;
+
+  background: linear-gradient(
+    var(--gradient-angle),
+    rgb(70, 130, 180) 0%,
+    rgb(25, 25, 112) 100%
+  );
+
+  display: flex; /* justify and align */
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  margin: 0;
+}
+
+/* panel */
+
+#panel {
+  background-image: linear-gradient(
+    var(--gradient-angle),
+    var(--gray-color-1) 0%,
+    var(--gray-color-0) 100%
+  );
+
+  flex-shrink: 0;
+
+  width: 60rem;
+
+  padding: var(--big-gap);
+
+  border-radius: var(--border-radius);
+  border: calc(var(--border-width) / 10) solid var(--gray-color-1);
+
+  box-shadow: var(--inner-shadow), 2rem 2rem 4rem 0.5rem rgb(var(--black), 0.5);
+}
+
+/* h1 */
+
+#panel > h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--alteranive-font-size);
+  color: rgb(var(--white));
+  text-shadow: var(--glow);
+
+  background: var(--orange-gradient);
+
+  border-radius: var(--border-radius);
+  border: solid calc(var(--border-width) * 2) var(--gray-color-0);
+
+  padding: var(--small-gap);
+  margin: 0;
+}
+
+/* content */
+
+#content {
+  display: flex;
+
+  margin-top: var(--small-gap);
+}
+
+/* buttons */
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  width: var(--button-width);
+  height: var(--button-width);
+
+  border-radius: var(--border-radius);
+  border: solid var(--border-width) var(--gray-color-1);
+}
+
+.button:hover,
+.button:focus {
+  border-color: var(--orange-color-0);
+}
+
+#reset {
+  background: url("img/reset.svg"), var(--orange-gradient);
+}
+
+#github {
+  background: url("img/github.svg"), rgb(var(--white));
+
+  margin: var(--small-gap) 0;
+}
+
+#update {
+  background: url("img/update.svg"), var(--orange-gradient);
+}
+
+#reset,
+#github,
+#update {
+  background-size: cover;
+}
+
+/* form */
+
+form {
+  margin: 0 var(--small-gap);
+  padding: var(--small-gap);
+
+  background-color: rgb(var(--white));
+
+  border-radius: var(--border-radius);
+
+  box-shadow: var(--inner-shadow);
+
+  flex: 30%;
+
+  text-align: right;
+
+  display: grid;
+  grid-template-columns: 57% 43%;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  height: 2.5rem;
+
+  border-radius: var(--border-radius);
+  border: solid var(--orange-color-1) var(--border-width);
+
+  text-align: center;
+}
+
+/* hiding input arrows */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input:hover,
+input:focus {
+  border-color: var(--orange-color-0);
+}
+
+label {
+  margin-right: 0.5rem;
+}
+
+/* pagination div */
+
+#pagination-div {
+  flex: 70%;
+
+  max-height: calc(var(--button-width) * 3 + var(--small-gap) * 2);
+
+  padding: var(--small-gap);
+
+  background: var(--orange-gradient);
+
+  border-radius: var(--border-radius);
+
+  color: rgb(var(--white));
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+p {
+  font-weight: bolder;
+
+  text-shadow: var(--glow);
+  font-size: var(--alteranive-font-size);
+}
+
+/* pagination list */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  font-family: "HelveticaNeueLT Pro 55 Roman", Arial, sans-serif;
+}
+
+li {
+  margin: 0.25rem;
+
+  font-weight: bolder;
+}
+
+li a,
+.disabled,
+.checked {
+  display: inline-block;
+
+  border: solid rgb(var(--white)) var(--border-width);
+  background-color: rgb(var(--white), 0.25);
+  border-radius: var(--border-radius);
+
+  height: var(--item-width);
+  width: var(--item-width);
+
+  box-shadow: 0 0 2rem 0.5rem rgb(var(--white), 0.25);
+
+  line-height: calc(var(--item-width) - (2 * var(--border-width)));
+}
+
+li a:hover,
+.checked {
+  background-color: rgb(var(--white), 0.5);
+
+  cursor: default; /* for .checked */
+}
+
+li a:hover {
+  cursor: pointer;
+}
+
+/* effects */
+
+::selection {
+  background-color: var(--orange-color-0);
+}

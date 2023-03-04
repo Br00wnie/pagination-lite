@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="favicon.svg"/>
+  <script src="script.js" type="module"></script>
+  <title>Pagination Lite</title>
+</head>
+
+<body>
+<div id="panel">
+  <h1>Pagination Lite</h1>
+
+  <div id="content">
+    <div id="buttons">
+      <a class="button" id="reset" href="#" title="Reset input"></a>
+      <a
+        class="button"
+        id="github"
+        href="https://github.com/Br00wnie"
+        title="Go to GitHub"
+        target="_blank"
+      ></a>
+      <a class="button" id="update" href="#" title="Update pagination"></a>
+    </div>
+
+    <form>
+      <label for="number-of-articles">Number of articles:</label>
+      <input type="number" id="number-of-articles" value="64"/>
+      <label for="articles-per-page">Articles per page:</label>
+      <input type="number" id="articles-per-page" value="8"/>
+      <label for="pages-on-sides">Pages on sides:</label>
+      <input type="number" id="pages-on-sides" value="2"/>
+    </form>
+
+    <div id="pagination-div"></div>
+  </div>
+</div>
+</body>
+</html>
